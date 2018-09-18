@@ -23,26 +23,56 @@ while not victory:
         #checkar á valid direction breytuni og skoðar hvort
         #inputið sé rétt
         for i in valid_direction:
-            if direction == i:
-                if i == "n":
-                    player += north
-                elif i == "s":
-                    player -= south
-                    break
-                elif i == "e":
-                    player += east
-                else:
+            if i == "n":
+                player += north
+            elif i == "s":
+                player -= south
+            elif i == "e":
+                player += east
+            else:
                     print("not a valid direction!")
     elif player == 5:
         valid_direction = 'ws'
         print("You can travel: (W)est or (S)outh.")
         direction = input("Direction: " )
         for i in valid_direction:
-            if direction == i:
-                if i == "w":
-                    player -= west
-                elif i == "s":
-                    player -= south
+            if i == "w":
+                player -= west
+            elif i == "s":
+                player -= south
+            else:
+                print("not a valid direction!")
+    elif player == 7:
+        valid_direction = 'es'
+        print("You can travel: (S)outh or (E)ast.")
+        direction = input("Direction: " )
+        for i in valid_direction:
+            if i == "s":
+                player -= south
+            elif player == "e":
+                player += east
+            else:
+                print("not a valid direction!")
+    elif player == 8:
+        valid_direction = 'we'
+        print("You can travel: (W)est or (E)ast.")
+        direction = input("Direction: " )
+        for i in valid_direction:
+            if i == "w":
+                player -= west
+            elif i == "e":
+                player += east
+            else:
+                print("not a valid direction!")
+    elif player == 9:
+        valid_direction = "ws"
+        print("You can travel: (W)est or (S)outh.")
+        direction = input("Direction: ")
+        for i in valid_direction:
+            if i == "w":
+                player -= west
+            elif i == "e":
+                player += east
 
 
             
