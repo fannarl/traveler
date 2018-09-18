@@ -11,68 +11,98 @@ west = 1
 victory = False
 
 while not victory:
-    if player == 1 and player == 2 and player == 3:
+    if player == 1 or player == 2:
         valid_direction = 'n'
         print("You can travel: (N)orth.")
-        direction = input("Direction: " )
-        player += 3
+        direction = input("Direction: " ).lower()
+        #meðan direction er ekki í valid_direction halda áfram að byðja um direction              
+        while direction not in valid_direction:
+            print("Not a valid direction!")
+            direction = input("Direction: ").lower()
+        
+        if direction == "n":
+            player = player + north
+                    
     elif player == 4:
         valid_direction='nse'
         print("You can travel: (N)orth or (S)outh or (E)ast.")
-        direction = input("Direction: " )
+        direction = input("Direction: " ).lower()
         #checkar á valid direction breytuni og skoðar hvort
         #inputið sé rétt
-        for i in valid_direction:
-            if i == "n":
-                player += north
-            elif i == "s":
-                player -= south
-            elif i == "e":
-                player += east
-            else:
-                    print("not a valid direction!")
+        while direction not in valid_direction:
+            print("Not a valid direction!")
+            direction = input("Direction: ").lower()
+        if direction == "n":
+            player = player + north
+        elif direction == "s":
+            player = player - south
+        elif direction == "e":
+            player = player + east
+
     elif player == 5:
         valid_direction = 'ws'
         print("You can travel: (W)est or (S)outh.")
-        direction = input("Direction: " )
-        for i in valid_direction:
-            if i == "w":
-                player -= west
-            elif i == "s":
-                player -= south
-            else:
-                print("not a valid direction!")
+        direction = input("Direction: " ).lower()
+        while direction not in valid_direction:
+            print("Not a valid direction!")
+            direction = input("Direction: ").lower()
+        if direction == "w":
+            player = player - west
+        elif direction == "s":
+            player = player - south        
+
     elif player == 7:
         valid_direction = 'es'
         print("You can travel: (S)outh or (E)ast.")
-        direction = input("Direction: " )
-        for i in valid_direction:
-            if i == "s":
-                player -= south
-            elif player == "e":
-                player += east
-            else:
-                print("not a valid direction!")
+        direction = input("Direction: " ).lower()
+        while direction not in valid_direction:
+            print("Not a valid direction!")
+            direction = input("Direction: ").lower()
+        if direction == "e":
+            player = player + east
+        elif direction == "s":
+            player = player - south
+
     elif player == 8:
         valid_direction = 'we'
         print("You can travel: (W)est or (E)ast.")
-        direction = input("Direction: " )
-        for i in valid_direction:
-            if i == "w":
-                player -= west
-            elif i == "e":
-                player += east
-            else:
-                print("not a valid direction!")
+        direction = input("Direction: " ).lower()
+        while direction not in valid_direction:
+            print("Not a valid direction!")
+            direction = input("Direction: ").lower()
+        if direction == "w":
+            player = player - west
+        elif direction == "e":
+            player = player + east
+
     elif player == 9:
         valid_direction = "ws"
         print("You can travel: (W)est or (S)outh.")
-        direction = input("Direction: ")
-        for i in valid_direction:
-            if i == "w":
-                player -= west
-            elif i == "e":
-                player += east
+        direction = input("Direction: ").lower()
+        while direction not in valid_direction:
+            print("Not a valid direction!")
+            direction = input("Direction: ").lower()
+        if direction == "w":
+            player = player - west
+        elif direction == "s":
+            player = player - south
+
+    elif player == 6:
+        valid_direction = 'ns'
+        print("You can travel: (N)orth or (S)outh.")
+        direction = input("Direction: ").lower()
+        while direction not in valid_direction:
+            print("Not a valid direction!")
+            direction = input("Direction: ").lower()
+        if direction == "n":
+            player = player + north
+        elif direction == "s":
+            player = player - south
+
+    elif player == 3:
+        print("Victory!")
+        victory = True
+        break
 
 
             
