@@ -24,26 +24,30 @@ victory = False
 
 #meðan direction er ekki í valid_direction halda áfram að byðja um direction 
 def not_valid(p_dir, v_dir):
-    while p_dir not in v_dir:
-        print("Not a valid direction!")
+    if p_dir not in v_dir:
+        #print("Not a valid direction!")
         p_dir = input("Direction: ").lower()
-        return p_dir, v_dir
-
+        return True
+    return False
+    
 def dir_func(a_dir, a_player):
-        for a_dir in valid_direction:
-            if a_dir == "n":
-                a_player = a_player + 3
-                print("n")
-            elif a_dir == "s":
-                a_player = a_player - 3       
-                print("s")     
-            elif a_dir == "e":
-                a_player = a_player + 1
-                print("e")
-            elif a_dir == "w":
-                a_player = a_player - 1  
-                print("w") 
-            return a_player                       
+    if a_dir == "n":
+        a_player = a_player + 3
+        print("n")
+        print(player)
+    elif a_dir == "s":
+        a_player = a_player - 3       
+        print("s")     
+        print(player)
+    elif a_dir == "e":
+        a_player = a_player + 1
+        print("e")
+        print(player)
+    elif a_dir == "w":
+        a_player = a_player - 1  
+        print("w") 
+        print(player)
+    return a_player                       
 
 while not victory:
     if player == 1 or player == 2:
@@ -93,9 +97,8 @@ while not victory:
         print("Victory!")
         victory = True
         break
-    not_valid(direction, valid_direction)
-    player = dir_func(direction, player)
 
-            
-    
-
+    if not not_valid(direction, valid_direction):
+        player = dir_func(direction, player)
+    else:
+        print("Not a valid direction!")   
