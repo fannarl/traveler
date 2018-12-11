@@ -1,15 +1,18 @@
-# Leikur sem lætur þig ferðast um á grid með að nota höfuðáttirnar.
-# Gridið eru 9 reytir sem þýðir að hægt er að ýminda sér það sem beina línu
-#                1, 2, 3, 4, 5, 6, 7, 8, 9
-#Þá myndi gridið líta svona út:
-#               7   8   9
-#               4   5   6
-#               1   2   3
-# Notandi byrjar á 1 og getur ferðast norður
-# Til að fara norður eða suður þarf að bæta 3 við player breytuna til að fara norður og - 3 til að fara suður
-# Til að fara austur eða vestur þarf að bæta 1 við player breytuna til að fara austur eða -1 til að fara vestur
-# Þegar player er = 3 þá vinnur hann
-############################################################################
+# Leikur sem lætur þig ferðast um á grid með að nota höfuðáttirnar.                                             #
+# Gridið eru 9 reytir sem þýðir að hægt er að ýminda sér það sem beina línu                                     #
+#                1, 2, 3, 4, 5, 6, 7, 8, 9                                                                      #
+# Þá myndi gridið líta svona út:                                                                                #
+#       | eru veggir                                                                                            #
+#               7   8   9                                                                                       #
+#               4   5|  6                                                                                       #
+#               1  |2|  3                                                                                       #
+# Notandi byrjar á 1 og getur ferðast norður                                                                    #
+#   |1|, 2, 3, 4, 5, 6, 7, 8, 9                                                                                 #
+# Til að fara norður eða suður þarf að bæta 3 við player breytuna til að fara norður og - 3 til að fara suður   #
+#   |1|, 2, 3,|4|, 5, 6, 7, 8 ,9                                                                                #                            #
+# Til að fara austur eða vestur þarf að bæta 1 við player breytuna til að fara austur eða -1 til að fara vestur #
+# Þegar player er = 3 þá vinnur hann                                                                            #
+#################################################################################################################
 
 
 player = 1
